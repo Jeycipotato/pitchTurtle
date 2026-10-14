@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#073d55" />
+
+    <title>Projekt i TFYA65</title>
+
+    <meta
+      name="description"
+      content="Styr sköldpaddan mellan fem höjder och undvik plasten i havet."
+    />
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23073d55'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='43'%3E%F0%9F%90%A2%3C/text%3E%3C/svg%3E"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="game.js" defer></script>
+  </head>
+
+  <body>
+    <main class="shell">
+      <header>
+        <div>
+          <span class="eyebrow">Projekt i TFYA65</span>
+          <h1>Pitch Turtle</h1>
+        </div>
+
+        <div class="hud">
+          <div class="score">Poäng <strong id="score">0</strong></div>
+
+          <div class="lives" id="lives" aria-label="3 liv kvar">❤️ ❤️ ❤️</div>
+        </div>
+      </header>
+
+      <div class="game-wrap">
+        <canvas
+          id="game"
+          width="1100"
+          height="620"
+          aria-label="Spelplan med fem simhöjder"
+        ></canvas>
+
+        <div class="frequency-display">
+          Du använder frekvensen:
+          <span id="frequency-value">—</span>
+          Hz
+        </div>
+
+        <div class="overlay" id="overlay">
+          <div class="overlay-card">
+            <h2 id="overlay-title">Välj frekvensmätningsmetod</h2>
+
+            <p id="overlay-text">
+              Valen av metod kan påverka hur spelet körs. Sjunger du med vibrato
+              kan HPS kännas stabilare, medan YIN är mer exakt för mätning av
+              för "rena toner"
+            </p>
+
+            <div class="method-buttons" id="method-buttons">
+              <button id="method-hps" type="button">HPS</button>
+              <button id="method-yin" type="button">YIN</button>
+            </div>
+
+            <button id="start" type="button" hidden>Starta spelet</button>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <span>Ljusare ton: ↑ / Mörkare ton: ↓ </span>
+        <span>Sködpaddan tar skada av att simma in i skräpet!!!</span>
+
+        <button id="pause" type="button" disabled>Pausa</button>
+      </footer>
+
+      <div class="touch-controls" aria-label="Pekskärmskontroller">
+        <button id="up" type="button" aria-label="Simma upp">↑ Upp</button>
+
+        <button id="down" type="button" aria-label="Simma ned">↓ Ned</button>
+      </div>
+    </main>
+  </body>
+</html>
